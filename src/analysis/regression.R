@@ -1,5 +1,5 @@
 # Load the data
-data_app <- read_csv("C:/Users/joost/Documents/Msc/DpWM/Appstore/data/data.csv")
+data_app <- read_csv("/data/data.csv")
 view(data_app) #look at data
 
 #create multi-lang column for reg2
@@ -23,4 +23,5 @@ library(htmltools)
 output_filename <- ("regression.html")
 output_dir <- "gen/analysis/"
 output_path <- file.path(output_dir, output_filename)
-save_html(htmlreg, output_path, background = "white", libdir = "lib", lang = "en")
+htmltest<- stargazer(htmlreg, output_path, type="html")
+save_html(htmltest, output_path, background = "white", libdir = "lib", lang = "en")
